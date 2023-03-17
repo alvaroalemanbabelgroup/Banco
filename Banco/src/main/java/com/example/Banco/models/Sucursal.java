@@ -1,2 +1,4 @@
-package com.example.Banco.models;public class Sucursal {
+package com.example.Banco.models;
+
+public class Sucursal {
 }

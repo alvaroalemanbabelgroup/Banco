@@ -1,2 +1,4 @@
-package com.example.Banco.service.impl;public interface SucursalesService {
+package com.example.Banco.service;
+
+public interface SucursalesService {
 }

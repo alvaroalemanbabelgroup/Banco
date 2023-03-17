@@ -1,2 +1,4 @@
-package com.example.Banco.repositories.impl;public interface SucursalRepository {
+package com.example.Banco.repositories;
+
+public interface SucursalRepository {
 }

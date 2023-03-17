@@ -1,2 +1,4 @@
-package com.example.Banco.repositories.impl;public class SucursalRepositoryImpl {
+package com.example.Banco.repositories.impl;
+
+public class SucursalRepositoryImpl {
 }

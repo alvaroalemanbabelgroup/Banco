@@ -1,2 +1,4 @@
-package com.example.Banco.controllers;public class SucursalController {
+package com.example.Banco.controllers;
+
+public class SucursalController {
 }
