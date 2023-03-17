@@ -2,10 +2,11 @@ package com.example.Banco.services;
 
 import com.example.Banco.models.Cuenta;
 import com.example.Banco.repositories.CuentaMapper;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Service
 public class CuentaServiceImpl implements CuentaService{
 
     private final CuentaMapper cuentaMapper;
