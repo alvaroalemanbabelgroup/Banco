@@ -1,5 +1,7 @@
 package com.example.Banco.models;
 
+import java.util.List;
+
 public class Cliente {
     private int id;
     private String DNI;
@@ -11,7 +13,9 @@ public class Cliente {
     private String codigoPostal;
     private String email;
     private int telefono;
-    private String sucursalPrincipal;
+   // private Sucursal sucursalPrincipal;//TODO cambiar a Surcursal
+  //  private List<Cuenta> listasDeCuentas;//TODO
+
 
     public Cliente(int id, String DNI, String nombre, String calle, String numero, String localidad, String municipio, String codigoPostal, String email, int telefono, String sucursalPrincipal) {
         this.id = id;
@@ -24,7 +28,6 @@ public class Cliente {
         this.codigoPostal = codigoPostal;
         this.email = email;
         this.telefono = telefono;
-        this.sucursalPrincipal = sucursalPrincipal;
     }
 
     public int getId() {
@@ -107,11 +110,5 @@ public class Cliente {
         this.telefono = telefono;
     }
 
-    public String getSucursalPrincipal() {
-        return sucursalPrincipal;
-    }
 
-    public void setSucursalPrincipal(String sucursalPrincipal) {
-        this.sucursalPrincipal = sucursalPrincipal;
-    }
 }
