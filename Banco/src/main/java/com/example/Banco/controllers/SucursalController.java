@@ -2,13 +2,12 @@ package com.example.Banco.controllers;
 
 import com.example.Banco.models.Sucursal;
 import com.example.Banco.service.SucursalesService;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
+@RequestMapping("/sucursales")
 public class SucursalController {
     private SucursalesService sucursalesService;
 
@@ -16,17 +15,17 @@ public class SucursalController {
         this.sucursalesService = sucursalesService;
     }
 
-    @PostMapping("/alta")
+    @PostMapping("")
     public void alta(Sucursal sucursal){
         this.sucursalesService.alta(sucursal);
     }
 
-    @PutMapping("/modificar")
+    @PutMapping("")
     public void modificar(Sucursal sucursalVieja, Sucursal sucursalNueva){
         this.sucursalesService.modificar(sucursalVieja, sucursalNueva);
     }
 
-    @GetMapping("/listar")
+    @GetMapping("")
     public List<Sucursal> listar(){
         return this.sucursalesService.listar();
     }
