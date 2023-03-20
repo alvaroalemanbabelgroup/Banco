@@ -41,8 +41,9 @@ public class ClienteController {
     }
 
     @PutMapping("")
-    public Cliente modificar(@RequestBody Cliente cliente){
+    public Cliente modificar(@RequestBody Cliente cliente) {
         return this.cliente.actualizar(cliente);
+    }
     @DeleteMapping("")
     public ResponseEntity<String> borrarCliente(@RequestParam int id){
         boolean borrado = this.clienteMapper.borrar(id);
