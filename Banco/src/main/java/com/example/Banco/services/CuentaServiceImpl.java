@@ -20,8 +20,11 @@ public class CuentaServiceImpl implements CuentaService{
         return cuentaMapper.findAll().stream().collect(Collectors.toList());
     }
 
+
     @Override
     public Cuenta add(Cuenta cuenta) {
-        return cuentaMapper.add(cuenta);
+        //TODO: Hay que hacer el add
+        return null;
+       // return cuentaMapper.add(cuenta);
     }
 }

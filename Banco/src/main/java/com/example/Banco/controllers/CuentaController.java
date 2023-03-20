@@ -24,6 +24,6 @@ public class CuentaController {
     @GetMapping("/Cuenta")
     public String muestraCuentas(Model model){
         model.addAttribute("listaCuentas",cuentaService.getCuentas());
-        return "Muestra cuentas";
+        return "muestraCuentas";
     }
 }
