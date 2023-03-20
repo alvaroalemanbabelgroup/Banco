@@ -27,4 +27,8 @@ public interface ClienteMapper {
 
     @Delete("Delete FROM Cliente WHERE ID = #{id}")
     boolean borrar(int id);
+
+    @Update("Update Cliente set id=#{id}, dni=#{dni}, nombre=#{nombre}, email=#{email}, telefono=#{telefono}, direccion=#{direccion}, num=#{num}, piso=#{piso}" +
+            "puerta=#{puerta}, cod_postal=#{cod_postal}, municipio=#{municipio}, sucursal_principal=#{sucursal_principal} ")
+    boolean actualizar(int id);
 }
