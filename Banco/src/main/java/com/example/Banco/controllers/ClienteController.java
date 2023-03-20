@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/banco")
+@RequestMapping("/cliente")
 public class ClienteController {
 
     private ClienteMapper clienteMapper;
@@ -17,16 +17,32 @@ public class ClienteController {
     public ClienteController(ClienteMapper clienteMapper) {
         this.clienteMapper = clienteMapper;
     }
-    @GetMapping("/cliente")
-    public ResponseEntity<Cliente> getCliente(){
+    @GetMapping("")
+    public ResponseEntity<Cliente> listar(){
 
         Cliente cliente = this.clienteMapper.getCliente(3);
         return ResponseEntity.ok(cliente);
     }
 
-    @PostMapping("/anyadir")
-    public Cliente anyadirCliente(@RequestParam Cliente cliente){
+    // /cliente?id=1
+
+    // /cliente?dni=32423
+
+    @GetMapping("")
+    public ResponseEntity<Cliente> getClienteById(@RequestParam int id, @RequestParam String dni){
+
+        Cliente cliente = this.clienteMapper.getCliente(id);
+        return ResponseEntity.ok(cliente);
+    }
+
+    @PostMapping("")
+    public Cliente anyadirCliente(@RequestBody Cliente cliente){
         return this.cliente.anyadir(cliente);
+    }
+
+    @PutMapping("")
+    public Cliente modificar(@RequestBody Cliente cliente){
+        return this.cliente.actualizar(cliente);
     }
 
 }
