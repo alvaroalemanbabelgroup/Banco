@@ -10,10 +10,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/cliente")
 public class ClienteController {
 
+
+
     private ClienteMapper clienteMapper;
     private ClienteService cliente;
-    public ClienteController(ClienteMapper clienteMapper) {
+
+    public ClienteController(ClienteMapper clienteMapper, ClienteService cliente) {
         this.clienteMapper = clienteMapper;
+        this.cliente = cliente;
     }
     @GetMapping("")
     public ResponseEntity<Cliente> listar(){
