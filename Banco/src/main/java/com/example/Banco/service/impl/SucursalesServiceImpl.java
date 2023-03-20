@@ -12,6 +12,10 @@ public class SucursalesServiceImpl implements SucursalesService {
 
     private SucursalRepositoryMyBatis sucursalRepositoryMyBatis;
 
+    public SucursalesServiceImpl(SucursalRepositoryMyBatis sucursalRepositoryMyBatis) {
+        this.sucursalRepositoryMyBatis = sucursalRepositoryMyBatis;
+    }
+
     @Override
     public void alta(Sucursal sucursal) {
         sucursalRepositoryMyBatis.alta(sucursal);
