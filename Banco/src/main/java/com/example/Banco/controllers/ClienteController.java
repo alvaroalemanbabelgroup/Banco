@@ -39,7 +39,7 @@ public class ClienteController {
     }
 
     @PutMapping("")
-    public ResponseEntity<String> actualizar(@RequestBody int id) {
+    public ResponseEntity<String> actualizar(@RequestParam int id) {
         boolean actualizado = this.clienteMapper.actualizar(id);
         if(actualizado){
             return  ResponseEntity.ok("Cliente actualizado con id: " + id);
