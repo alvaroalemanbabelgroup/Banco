@@ -1,10 +1,7 @@
 package com.example.Banco.mappers;
 
 import com.example.Banco.models.Cliente;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -25,5 +22,6 @@ public interface ClienteMapper {
             @Result(property = "email", column = "email")
     })
     List<Cliente> getPolizas();
-
+    @Insert("Insert into Cliente values (id,dni,nombre,email,telefono,direccion,num,piso,puerta,cod_postal,municipio,sucursal_principal)")
+    void insertar();
 }
