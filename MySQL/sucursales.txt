@@ -1,0 +1,11 @@
+id_sucursal	nombre	dirección	num	piso	puerta	cod_postal	municipio	director
+1	Sucursal A	Calle Mayor	12	NULL	NULL	28001	Madrid	Juan Pérez
+2	Sucursal B	Avenida del Mar	5	2	B	08020	Barcelona	Laura García
+3	Sucursal C	Plaza de la Concordia	8	NULL	NULL	41001	Sevilla	Antonio Sánchez
+4	Sucursal D	Calle de la Luna	23	1	A	50001	Zaragoza	Carlos Fernández
+5	Sucursal E	Avenida del Sol	15	NULL	NULL	29010	Málaga	Ana Martínez
+6	Sucursal F	Calle de la Paz	4	NULL	NULL	28004	Madrid	María López
+7	Sucursal G	Avenida del Parque	32	4	D	46001	Valencia	Francisco González
+8	Sucursal H	Calle del Mar	9	NULL	NULL	03001	Alicante	David Rodríguez
+9	Sucursal I	Plaza de la Victoria	16	2	C	29005	Málaga	Rosa Jiménez
+10	Sucursal J	Avenida de la Libertad	17	NULL	NULL	50010	Zaragoza	Miguel Álvarez

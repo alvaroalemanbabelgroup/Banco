@@ -1,0 +1,11 @@
+id_cuenta	numero_cuenta	sucursal	id_usuario	balance
+1	1111-1111-11	Madrid	1	1000
+2	2222-2222-22	Barcelona	2	5000
+3	3333-3333-33	Madrid	3	2500
+4	4444-4444-44	Valencia	4	3000
+5	5555-5555-55	Barcelona	5	1500
+6	6666-6666-66	Valencia	6	2000
+7	7777-7777-77	Madrid	7	500
+8	8888-8888-88	Barcelona	8	4000
+9	9999-9999-99	Valencia	9	700
+10	0000-0000-00	Madrid	10	1200
