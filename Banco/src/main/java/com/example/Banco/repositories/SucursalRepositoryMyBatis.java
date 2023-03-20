@@ -29,5 +29,10 @@ public interface SucursalRepositoryMyBatis {
     public void borrar(Sucursal sucursal);
 
 
+    @Update("Update SUCURSAL SET #{sucursalvieja.id}= #{sucursalnueva.id}, " +
+            "#{sucursalvieja.nombre}= #{sucursalnueva.nombre}," +
+            "#{sucursalvieja.director}= #{sucursalnueva.director}," +
+            "#{sucursalvieja.direccion}= #{sucursalnueva.direccion} " +
+            "from SUCURSAL where id = #{sucursalvieja}")
     public void modificar(Sucursal sucursalvieja, Sucursal sucursalNueva);
 }
