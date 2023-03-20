@@ -30,12 +30,12 @@ public class ClienteController {
 
     // /cliente?dni=32423
 
-    @GetMapping("")
+    /*@GetMapping("")
     public ResponseEntity<Cliente> getClienteById(@RequestParam int id, @RequestParam String dni){
 
         Cliente cliente = this.clienteMapper.getCliente(id);
         return ResponseEntity.ok(cliente);
-    }
+    }*/
 
     @PostMapping("")
     public Cliente anyadirCliente(@RequestBody Cliente cliente){
