@@ -31,7 +31,7 @@ public interface SucursalRepositoryMyBatis {
     })
     public List<Sucursal> listar();
 
-
+    @Delete("DELETE FROM sucursal WHERE id=#{sucursal.id}")
     public void borrar(Sucursal sucursal);
 
 
