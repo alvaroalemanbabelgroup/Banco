@@ -24,4 +24,7 @@ public interface ClienteMapper {
     List<Cliente> getPolizas();
     @Insert("Insert into Cliente values (id,dni,nombre,email,telefono,direccion,num,piso,puerta,cod_postal,municipio,sucursal_principal)")
     void insertar();
+
+    @Delete("Delete FROM Cliente WHERE ID = #{id}")
+    boolean borrar(int id);
 }

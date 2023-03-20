@@ -29,4 +29,14 @@ public class ClienteController {
         return this.cliente.anyadir(cliente);
     }
 
+    @DeleteMapping("")
+    public ResponseEntity<String> borrarCliente(@RequestParam int id){
+        boolean borrado = this.clienteMapper.borrar(id);
+        if(borrado){
+            return ResponseEntity.ok("Cliente borrado con id: " + id);
+        }
+        return ResponseEntity.ok("Error al borrar el cliente: " + id);
+
+    }
+
 }
