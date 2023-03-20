@@ -15,7 +15,7 @@ public interface SucursalRepositoryMyBatis {
 
 
     //TODO: Implementar/corregir sentencia SQL con los nombres cuando los tengamos
-    @Select("SELECT ................")
+    @Select("SELECT id, nombre, director, direccion from sucursal")
     @Results(value = {
             @Result(property = "id", column = "id"),
             @Result(property = "nombre", column = "nombre"),
