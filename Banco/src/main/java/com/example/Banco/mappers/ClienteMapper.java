@@ -7,14 +7,14 @@ import java.util.List;
 
 @Mapper
 public interface ClienteMapper {
-    @Select("Select ID,DNI,NOMBRE,EMAIL,TELEFONO,DIRECCION,NUM,PISO,PUERTA,COD_POSTAL,MUNICIPIO,SUCURSAL_PRINCIPAL,ID_CLIENTE from BANCO.CLIENTE from BANCO.CLIENTE where ID = #{id}")
+    @Select("Select ID,DNI,NOMBRE,EMAIL,TELEFONO,DIRECCIÓN,NUM,PISO,PUERTA,COD_POSTAL,MUNICIPIO,SUCURSAL_PRINCIPAL,ID_CLIENTE from BANCO.CLIENTE from BANCO.CLIENTE where ID = #{id}")
     Cliente getCliente(int idCliente);
 
-    @Select("Select ID,DNI,NOMBRE,EMAIL,TELEFONO,DIRECCION,NUM,PISO,PUERTA,COD_POSTAL,MUNICIPIO,SUCURSAL_PRINCIPAL,ID_CLIENTE from BANCO.CLIENTE")
+    @Select("Select ID,DNI,NOMBRE,EMAIL,TELEFONO,DIRECCIÓN,NUM,PISO,PUERTA,COD_POSTAL,MUNICIPIO,SUCURSAL_PRINCIPAL,ID_CLIENTE from BANCO.CLIENTE")
     List<Cliente> getClientes();
-    @Insert("Insert into Cliente (DNI,NOMBRE,EMAIL,TELEFONO,DIRECCION,NUM,PISO,PUERTA,COD_POSTAL,MUNICIPIO,SUCURSAL_PRINCIPAL,ID_CLIENTE) " +
-            "values (#{DNI, jdbcType=VARCHAR},#{nombre, jdbcType=VARCHAR},#{email, jdbcType=VARCHAR},#{telefono, jdbcType=VARCHAR},#{direccion, jdbcType=VARCHAR}" +
-            ",#{num, jdbcType=VARCHAR},#{piso},#{puerta},#{codPostal, jdbcType=CHAR},#{municipio, jdbcType=VARCHAR},#{sucursalPrincipal, jdbcType=NUMERIC}#{idCliente})")
+    @Insert("Insert into Cliente (DNI,NOMBRE,EMAIL,TELEFONO,DIRECCIÓN,NUM,PISO,PUERTA,COD_POSTAL,MUNICIPIO,SUCURSAL_PRINCIPAL,ID_CLIENTE) " +
+            "values (#{DNI},#{nombre},#{email},#{telefono, jdbcType=VARCHAR},#{direccion}" +
+            ",#{num},#{piso, jdbcType=VARCHAR},#{puerta, jdbcType=VARCHAR},#{codPostal},#{municipio},#{sucursalPrincipal}#{idCliente, jdbcType=NUMERIC})")
     @Options(useGeneratedKeys = true,keyProperty = "id", keyColumn = "ID")
     void insertar(Cliente cliente);
 
