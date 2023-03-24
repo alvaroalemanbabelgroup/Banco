@@ -3,14 +3,16 @@ package com.example.Banco.controllers;
 import com.example.Banco.mappers.ClienteMapper;
 import com.example.Banco.models.Cliente;
 import com.example.Banco.services.ClienteService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/cliente")
 public class ClienteController {
-
-
 
     private ClienteMapper clienteMapper;
     private ClienteService cliente;
@@ -20,39 +22,32 @@ public class ClienteController {
         this.cliente = cliente;
     }
     @GetMapping("")
-    public ResponseEntity<Cliente> listar(){
+     ResponseEntity<List<Cliente>> listar(){
+        List<Cliente> listaCliente = new ArrayList<>();
+        listaCliente = this.clienteMapper.getClientes();
 
-        Cliente cliente = this.clienteMapper.getCliente(3);
-        return ResponseEntity.ok(cliente);
+        return ResponseEntity.ok(listaCliente);
     }
 
-    // /cliente?id=1
+    @GetMapping("/{id}")
+     ResponseEntity<Cliente> listaCliente(@RequestParam int id){
+        return ResponseEntity.ok(this.clienteMapper.getCliente(id));
+    }
 
-    // /cliente?dni=32423
-
-    /*@GetMapping("")
-    public ResponseEntity<Cliente> getClienteById(@RequestParam int id, @RequestParam String dni){
-
-        Cliente cliente = this.clienteMapper.getCliente(id);
-        return ResponseEntity.ok(cliente);
-    }*/
 
     @PostMapping("")
-    public Cliente anyadirCliente(@RequestBody Cliente cliente){
-        return this.cliente.anyadir(cliente);
+     void anyadirCliente(@RequestBody Cliente cliente){
+        this.cliente.insertar(cliente);
     }
 
     @PutMapping("")
-    public ResponseEntity<String> actualizar(@RequestParam int id) {
-        boolean actualizado = this.clienteMapper.actualizar(id);
-        if(actualizado){
-            return  ResponseEntity.ok("Cliente actualizado con id: " + id);
-        } else {
-            return ResponseEntity.ok("Cliente con id: " + id + " no actualizado.");
-        }
+     ResponseEntity<String> actualizar(@RequestBody Cliente cliente) {
+         this.clienteMapper.actualizar(cliente);
+         return ResponseEntity.ok("Cliente actualizado");
     }
+
     @DeleteMapping("")
-    public ResponseEntity<String> borrarCliente(@RequestParam int id){
+     ResponseEntity<String> borrarCliente(@RequestParam int id){
         boolean borrado = this.clienteMapper.borrar(id);
         if(borrado){
             return ResponseEntity.ok("Cliente borrado con id: " + id);
@@ -60,7 +55,5 @@ public class ClienteController {
         return ResponseEntity.ok("Error al borrar el cliente: " + id);
 
     }
-
-
 
 }

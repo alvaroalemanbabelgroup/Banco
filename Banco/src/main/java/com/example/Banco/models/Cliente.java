@@ -6,30 +6,20 @@ public class Cliente {
     private int id;
     private String DNI;
     private String nombre;
-    private String nombreCalle;
+    private String email;
+    private String direccion;
     private String num;
     private String piso;
+    private String puerta;
     private String municipio;
     private String codPostal;
     private int sucursalPrincipal;
-    private String email;
+    private int idCliente;
+
     private String telefono;
    // private Sucursal sucursalPrincipal;//TODO cambiar a Surcursal
   //  private List<Cuenta> listasDeCuentas;//TODO
 
-
-    public Cliente(int id, String DNI, String nombre, String nombreCalle, String numero, String municipio, String codPostal, String email, String telefono, int sucursalPrincipal) {
-        this.id = id;
-        this.DNI = DNI;
-        this.nombre = nombre;
-        this.nombreCalle = nombreCalle;
-        this.num = numero;
-        this.municipio = municipio;
-        this.codPostal = codPostal;
-        this.email = email;
-        this.telefono = telefono;
-        this.sucursalPrincipal = sucursalPrincipal;
-    }
 
     public int getId() {
         return id;
@@ -55,12 +45,20 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public String getNombreCalle() {
-        return nombreCalle;
+    public String getEmail() {
+        return email;
     }
 
-    public void setNombreCalle(String nombreCalle) {
-        this.nombreCalle = nombreCalle;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public String getNum() {
@@ -77,6 +75,14 @@ public class Cliente {
 
     public void setPiso(String piso) {
         this.piso = piso;
+    }
+
+    public String getPuerta() {
+        return puerta;
+    }
+
+    public void setPuerta(String puerta) {
+        this.puerta = puerta;
     }
 
     public String getMunicipio() {
@@ -103,12 +109,12 @@ public class Cliente {
         this.sucursalPrincipal = sucursalPrincipal;
     }
 
-    public String getEmail() {
-        return email;
+    public int getIdCliente() {
+        return idCliente;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
     public String getTelefono() {

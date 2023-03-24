@@ -7,14 +7,15 @@ import java.util.List;
 
 @Mapper
 public interface ClienteMapper {
-    @Select("Select POLIZA_ID, NUM, NIF_TOMADOR from POLIZAMANAGER.POLIZAS where POLIZA_ID = #{idPoliza}")
+    @Select("Select ID,DNI,NOMBRE,EMAIL,TELEFONO,DIRECCION,NUM,PISO,PUERTA,COD_POSTAL,MUNICIPIO,SUCURSAL_PRINCIPAL,ID_CLIENTE from BANCO.CLIENTE from BANCO.CLIENTE where ID = #{id}")
     Cliente getCliente(int idCliente);
 
-    @Select("Select id, email, dni from POLIZAMANAGER.POLIZAS")
-    List<Cliente> getPolizas();
-    @Insert("Insert into Cliente (ID,DNI,NOMBRE,EMAIL,TELEFONO,NOMBRE_CALLE,NUM,PISO,COD_POSTAL,MUNICIPIO,SUCURSAL_PRINCIPAL) " +
-            "values (#{id, jdbcType=NUMERIC},#{DNI, jdbcType=VARCHAR},#{nombre, jdbcType=VARCHAR},#{email, jdbcType=VARCHAR},#{telefono, jdbcType=VARCHAR},#{nombreCalle, jdbcType=VARCHAR}" +
-            ",#{num, jdbcType=VARCHAR},#{piso},#{codPostal, jdbcType=CHAR},#{municipio, jdbcType=VARCHAR},#{sucursalPrincipal, jdbcType=NUMERIC})")
+    @Select("Select ID,DNI,NOMBRE,EMAIL,TELEFONO,DIRECCION,NUM,PISO,PUERTA,COD_POSTAL,MUNICIPIO,SUCURSAL_PRINCIPAL,ID_CLIENTE from BANCO.CLIENTE")
+    List<Cliente> getClientes();
+    @Insert("Insert into Cliente (DNI,NOMBRE,EMAIL,TELEFONO,DIRECCION,NUM,PISO,PUERTA,COD_POSTAL,MUNICIPIO,SUCURSAL_PRINCIPAL,ID_CLIENTE) " +
+            "values (#{DNI, jdbcType=VARCHAR},#{nombre, jdbcType=VARCHAR},#{email, jdbcType=VARCHAR},#{telefono, jdbcType=VARCHAR},#{direccion, jdbcType=VARCHAR}" +
+            ",#{num, jdbcType=VARCHAR},#{piso},#{puerta},#{codPostal, jdbcType=CHAR},#{municipio, jdbcType=VARCHAR},#{sucursalPrincipal, jdbcType=NUMERIC}#{idCliente})")
+    @Options(useGeneratedKeys = true,keyProperty = "id", keyColumn = "ID")
     void insertar(Cliente cliente);
 
     @Delete("Delete FROM Cliente WHERE ID = #{id}")
@@ -22,5 +23,6 @@ public interface ClienteMapper {
 
     @Update("Update Cliente set dni=#{dni}, nombre=#{nombre}, email=#{email}, telefono=#{telefono}, direccion=#{direccion}, num=#{num}, piso=#{piso}" +
             "puerta=#{puerta}, cod_postal=#{cod_postal}, municipio=#{municipio}, sucursal_principal=#{sucursal_principal} where id=#{id}")
-    boolean actualizar(int id);
+    @Options(useGeneratedKeys = true,keyProperty = "id", keyColumn = "ID")
+    void actualizar(Cliente cliente);
 }

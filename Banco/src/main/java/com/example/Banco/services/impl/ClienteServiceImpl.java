@@ -17,13 +17,12 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    public Cliente anyadir(Cliente cliente) {
-        return clienteMapper.insertar(cliente);
+    public void insertar(Cliente cliente) { clienteMapper.insertar(cliente);
     }
 
     @Override
-    public Cliente actualizarCliente(Cliente cliente) {
-        return clienteMapper.actualizar(cliente);
+    public void actualizarCliente(Cliente cliente) {
+         clienteMapper.actualizar(cliente);
     }
 
     @Override

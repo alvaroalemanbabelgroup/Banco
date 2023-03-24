@@ -5,8 +5,8 @@ import com.example.Banco.models.Cliente;
 import java.util.List;
 
 public interface ClienteService{
-    Cliente anyadir(Cliente cliente);
-    Cliente actualizarCliente(Cliente cliente);
+    void insertar(Cliente cliente);
+    void actualizarCliente(Cliente cliente);
 
     boolean borrarCliente(Cliente cliente);
     Cliente getCliente(int idCliente);
