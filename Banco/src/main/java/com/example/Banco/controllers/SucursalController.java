@@ -24,17 +24,20 @@ public class SucursalController {
     }
 
     @PutMapping("")
-    public void modificar(Sucursal sucursalVieja, Sucursal sucursalNueva){
+    ResponseEntity<Sucursal> modificar(Sucursal sucursalVieja, Sucursal sucursalNueva){
         this.sucursalesService.modificar(sucursalVieja, sucursalNueva);
+        return ResponseEntity.ok(sucursalNueva);
     }
 
     @GetMapping("")
-    public List<Sucursal> listar(){
-        return this.sucursalesService.listar();
+    ResponseEntity<List<Sucursal>> listar(){
+        this.sucursalesService.listar();
+        return ResponseEntity.ok(sucursalesService.listar());
     }
 
     @DeleteMapping("")
-    public void borrar(@RequestBody Sucursal sucursal){
+    ResponseEntity<String> borrar(@RequestBody Sucursal sucursal){
         this.sucursalesService.borrar(sucursal);
+        return ResponseEntity.ok("Borrado id:"+sucursal.getId());
     }
 }
