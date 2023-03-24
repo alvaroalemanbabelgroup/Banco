@@ -8,7 +8,7 @@ public interface ClienteService{
     Cliente anyadir(Cliente cliente);
     Cliente actualizarCliente(Cliente cliente);
 
-    Cliente borrarCliente(Cliente cliente);
+    boolean borrarCliente(Cliente cliente);
     Cliente getCliente(int idCliente);
     List<Cliente> getClientes();
 }
