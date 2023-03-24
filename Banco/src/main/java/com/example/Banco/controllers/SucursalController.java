@@ -12,11 +12,12 @@ public class SucursalController {
     private SucursalesService sucursalesService;
 
     public SucursalController(SucursalesService sucursalesService){
+
         this.sucursalesService = sucursalesService;
     }
 
     @PostMapping("")
-    public void alta(Sucursal sucursal){
+    public void alta(@RequestBody Sucursal sucursal){
         this.sucursalesService.alta(sucursal);
     }
 

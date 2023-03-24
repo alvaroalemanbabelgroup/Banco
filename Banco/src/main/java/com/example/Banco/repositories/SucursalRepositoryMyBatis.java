@@ -10,8 +10,9 @@ public interface SucursalRepositoryMyBatis {
 
     //TODO: Implementar sentencia SQL con los nombres cuando los tengamos
     @Insert("INSERT INTO SUCURSAL(ID, NOMBRE, DIRECCION, NUM, PISO, PUERTA, COD_POSTAL, MUNICIPIO, DIRECTOR) " +
-            "VALUES(#{sucursal.id}, #{sucursal.nombre}, #{sucursal.direccion}, #{sucursal.num}, #{sucursal.piso}," +
-            " #{sucursal.puerta}, #{sucursal.cod_postal}, #{sucursal.municipio}, #{sucursal.director},)")
+            "VALUES(#{id}, #{nombre}, #{direccion}, #{num}, #{piso}," +
+            " #{puerta}, #{cod_postal}, #{municipio}, #{director})")
+
     public void alta(Sucursal sucursal);
 
 
