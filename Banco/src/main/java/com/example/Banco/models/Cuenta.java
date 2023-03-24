@@ -1,40 +1,40 @@
 package com.example.Banco.models;
 
 public class Cuenta {
-    private int numeroCuenta;
-    private String nombreSucursal;
-    private int idUsuario;
+    private int idCuenta;
+    private String numeroCuenta;
+    private int idCliente;
     private float balance;
 
     public Cuenta(int numeroCuenta, String nombreSucursal, int idUsuario, float balance) {
-        this.numeroCuenta = numeroCuenta;
-        this.nombreSucursal = nombreSucursal;
-        this.idUsuario = idUsuario;
+        this.idCuenta = numeroCuenta;
+        this.numeroCuenta = nombreSucursal;
+        this.idCliente = idUsuario;
         this.balance = balance;
     }
 
-    public int getNumeroCuenta() {
+    public int getIdCuenta() {
+        return idCuenta;
+    }
+
+    public void setIdCuenta(int idCuenta) {
+        this.idCuenta = idCuenta;
+    }
+
+    public String getNumeroCuenta() {
         return numeroCuenta;
     }
 
-    public void setNumeroCuenta(int numeroCuenta) {
+    public void setNumeroCuenta(String numeroCuenta) {
         this.numeroCuenta = numeroCuenta;
     }
 
-    public String getNombreSucursal() {
-        return nombreSucursal;
+    public int getIdCliente() {
+        return idCliente;
     }
 
-    public void setNombreSucursal(String nombreSucursal) {
-        this.nombreSucursal = nombreSucursal;
-    }
-
-    public int getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
     public float getBalance() {
