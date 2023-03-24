@@ -5,6 +5,7 @@ import com.example.Banco.models.Cuenta;
 import com.example.Banco.services.CuentaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,9 +27,10 @@ public class CuentaController {
     }
 
     @GetMapping("")
-    public String muestraCuentas(Model model){
+    public ResponseEntity<List<Cuenta>> muestraCuentas(Model model){
        // model.addAttribute("listaCuentas",cuentaService.getCuentas());
        // return cuentaService.getCuentas();
-        return "hola buenas";
+        List<Cuenta> cuentas = this.cuentaService.getCuentas();
+        return ResponseEntity.ok(cuentas);
     }
 }
