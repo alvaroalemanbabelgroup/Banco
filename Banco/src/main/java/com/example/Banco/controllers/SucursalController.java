@@ -2,6 +2,7 @@ package com.example.Banco.controllers;
 
 import com.example.Banco.models.Sucursal;
 import com.example.Banco.service.SucursalesService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
