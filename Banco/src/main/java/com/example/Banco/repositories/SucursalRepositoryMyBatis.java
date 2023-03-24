@@ -20,7 +20,7 @@ public interface SucursalRepositoryMyBatis {
     @Select("SELECT ID,NOMBRE,DIRECCION, NUM, PISO, PUERTA, COD_POSTAL, MUNICIPIO, DIRECTOR FROM SUCURSAL")
     public List<Sucursal> listar();
 
-    @Delete("DELETE FROM sucursal WHERE id=#{sucursal.id}")
+    @Delete("DELETE FROM sucursal WHERE id=#{id}")
     public void borrar(Sucursal sucursal);
 
 
