@@ -32,7 +32,7 @@ public class SucursalController {
     }
 
     @DeleteMapping("")
-    public void borrar(Sucursal sucursal){
+    public void borrar(@RequestBody Sucursal sucursal){
         this.sucursalesService.borrar(sucursal);
     }
 }
