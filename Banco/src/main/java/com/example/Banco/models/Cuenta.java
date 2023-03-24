@@ -6,10 +6,10 @@ public class Cuenta {
     private int idCliente;
     private float balance;
 
-    public Cuenta(int numeroCuenta, String nombreSucursal, int idUsuario, float balance) {
-        this.idCuenta = numeroCuenta;
-        this.numeroCuenta = nombreSucursal;
-        this.idCliente = idUsuario;
+    public Cuenta(int idCuenta, String numeroCuenta, int idCliente, float balance) {
+        this.idCuenta = idCuenta;
+        this.numeroCuenta = numeroCuenta;
+        this.idCliente = idCliente;
         this.balance = balance;
     }
 

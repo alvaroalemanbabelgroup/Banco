@@ -8,9 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,9 +26,12 @@ public class CuentaController {
 
     @GetMapping("")
     public ResponseEntity<List<Cuenta>> muestraCuentas(Model model){
-       // model.addAttribute("listaCuentas",cuentaService.getCuentas());
-       // return cuentaService.getCuentas();
         List<Cuenta> cuentas = this.cuentaService.getCuentas();
         return ResponseEntity.ok(cuentas);
+    }
+    @PostMapping("")
+    public ResponseEntity<Cuenta> addCuenta(@RequestBody Cuenta cuenta){
+        this.cuentaService.add(cuenta);
+        return ResponseEntity.ok(cuenta);
     }
 }

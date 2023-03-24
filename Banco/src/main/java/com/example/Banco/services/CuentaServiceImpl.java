@@ -24,7 +24,7 @@ public class CuentaServiceImpl implements CuentaService{
     @Override
     public Cuenta add(Cuenta cuenta) {
         //TODO: Hay que hacer el add
-        return null;
-       // return cuentaMapper.add(cuenta);
+        return cuentaMapper.addCuenta(cuenta);
+
     }
 }

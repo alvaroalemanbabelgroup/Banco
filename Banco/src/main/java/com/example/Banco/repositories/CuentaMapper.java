@@ -1,10 +1,7 @@
 package com.example.Banco.repositories;
 
 import com.example.Banco.models.Cuenta;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.Collection;
 import java.util.List;
@@ -39,4 +36,7 @@ public interface CuentaMapper {
             @Result(property = "balance", column = "BALANCE")})
     Optional<Cuenta> findByCuenta(int id);
 
+    @Insert("INSERT INTO CUENTA (NUMERO_CUENTA, ID_CLIENTE, BALANCE) VALUES (#{numeroCuenta, jdbcType = VARCHAR}, #{idCliente}, #{balance})")
+    @Options(useGeneratedKeys = true, keyProperty = "idCuenta", keyColumn="ID")
+    Cuenta addCuenta(Cuenta cuenta);
 }
