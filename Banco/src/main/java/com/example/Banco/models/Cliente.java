@@ -6,28 +6,29 @@ public class Cliente {
     private int id;
     private String DNI;
     private String nombre;
-    private String calle;
-    private String numero;
-    private String localidad;
+    private String nombreCalle;
+    private String num;
+    private String piso;
     private String municipio;
-    private String codigoPostal;
+    private String codPostal;
+    private int sucursalPrincipal;
     private String email;
-    private int telefono;
+    private String telefono;
    // private Sucursal sucursalPrincipal;//TODO cambiar a Surcursal
   //  private List<Cuenta> listasDeCuentas;//TODO
 
 
-    public Cliente(int id, String DNI, String nombre, String calle, String numero, String localidad, String municipio, String codigoPostal, String email, int telefono, String sucursalPrincipal) {
+    public Cliente(int id, String DNI, String nombre, String nombreCalle, String numero, String municipio, String codPostal, String email, String telefono, int sucursalPrincipal) {
         this.id = id;
         this.DNI = DNI;
         this.nombre = nombre;
-        this.calle = calle;
-        this.numero = numero;
-        this.localidad = localidad;
+        this.nombreCalle = nombreCalle;
+        this.num = numero;
         this.municipio = municipio;
-        this.codigoPostal = codigoPostal;
+        this.codPostal = codPostal;
         this.email = email;
         this.telefono = telefono;
+        this.sucursalPrincipal = sucursalPrincipal;
     }
 
     public int getId() {
@@ -54,28 +55,28 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public String getCalle() {
-        return calle;
+    public String getNombreCalle() {
+        return nombreCalle;
     }
 
-    public void setCalle(String calle) {
-        this.calle = calle;
+    public void setNombreCalle(String nombreCalle) {
+        this.nombreCalle = nombreCalle;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getNum() {
+        return num;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setNum(String num) {
+        this.num = num;
     }
 
-    public String getLocalidad() {
-        return localidad;
+    public String getPiso() {
+        return piso;
     }
 
-    public void setLocalidad(String localidad) {
-        this.localidad = localidad;
+    public void setPiso(String piso) {
+        this.piso = piso;
     }
 
     public String getMunicipio() {
@@ -86,12 +87,20 @@ public class Cliente {
         this.municipio = municipio;
     }
 
-    public String getCodigoPostal() {
-        return codigoPostal;
+    public String getCodPostal() {
+        return codPostal;
     }
 
-    public void setCodigoPostal(String codigoPostal) {
-        this.codigoPostal = codigoPostal;
+    public void setCodPostal(String codPostal) {
+        this.codPostal = codPostal;
+    }
+
+    public int getSucursalPrincipal() {
+        return sucursalPrincipal;
+    }
+
+    public void setSucursalPrincipal(int sucursalPrincipal) {
+        this.sucursalPrincipal = sucursalPrincipal;
     }
 
     public String getEmail() {
@@ -102,13 +111,11 @@ public class Cliente {
         this.email = email;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-
-
 }
