@@ -21,14 +21,7 @@ public interface SucursalRepositoryMyBatis {
 
 
     //TODO: Implementar/corregir sentencia SQL con los nombres cuando los tengamos
-    @Select("SELECT id, nombre, director, direccion from sucursal")
-    @Results(value = {
-            @Result(property = "id", column = "id"),
-            @Result(property = "nombre", column = "nombre"),
-            @Result(property = "director", column = "director"),
-            @Result(property = "direccion", column = "direccion")
-
-    })
+    @Select("SELECT ID,NOMBRE,DIRECCION, NUM, PISO, PUERTA, COD_POSTAL, MUNICIPIO, DIRECTOR FROM SUCURSAL")
     public List<Sucursal> listar();
 
     @Delete("DELETE FROM sucursal WHERE id=#{sucursal.id}")
