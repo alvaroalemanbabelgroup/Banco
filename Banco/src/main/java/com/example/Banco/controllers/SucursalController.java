@@ -17,8 +17,9 @@ public class SucursalController {
     }
 
     @PostMapping("")
-    public void alta(@RequestBody Sucursal sucursal){
+    ResponseEntity alta(@RequestBody Sucursal sucursal){
         this.sucursalesService.alta(sucursal);
+        return ResponseEntity.ok(sucursal);
     }
 
     @PutMapping("")
