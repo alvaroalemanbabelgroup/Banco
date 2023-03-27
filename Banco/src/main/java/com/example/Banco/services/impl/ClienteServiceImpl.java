@@ -27,7 +27,7 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public boolean borrarCliente(Cliente cliente) {
-        return clienteMapper.borrar(cliente.getId());
+        return clienteMapper.borrar(cliente.getIdCliente());
     }
 
     @Override

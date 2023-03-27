@@ -3,7 +3,7 @@ package com.example.Banco.models;
 import java.util.List;
 
 public class Cliente {
-    private int id;
+    private int idCliente;
     private String DNI;
     private String nombre;
     private String email;
@@ -14,20 +14,12 @@ public class Cliente {
     private String municipio;
     private String codPostal;
     private int sucursalPrincipal;
-    private int idCliente;
 
     private String telefono;
    // private Sucursal sucursalPrincipal;//TODO cambiar a Surcursal
   //  private List<Cuenta> listasDeCuentas;//TODO
 
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getDNI() {
         return DNI;

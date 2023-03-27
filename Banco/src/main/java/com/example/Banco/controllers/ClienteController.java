@@ -29,7 +29,7 @@ public class ClienteController {
         return ResponseEntity.ok(listaCliente);
     }
 
-    @GetMapping("/clienteId")
+    @GetMapping("/")
      ResponseEntity<Cliente> listaCliente(@RequestParam int id){
         return ResponseEntity.ok(this.clienteMapper.getCliente(id));
     }
