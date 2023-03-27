@@ -51,10 +51,11 @@ public interface ClienteMapper {
     @Delete("Delete FROM Cliente WHERE ID_CLIENTE = #{idCliente}")
     boolean borrar(int id);
 
+    //TODO Arreglar actualizar, salta error METHOD NOT ALLOWED al intentar actualizar un cliente
     @Update("Update Cliente set dni=#{dni}, nombre=#{nombre}, email=#{email}, telefono=#{telefono}, direccion=#{direccion}, num=#{num}, piso=#{piso}" +
-            "puerta=#{puerta}, cod_postal=#{cod_postal}, municipio=#{municipio}, sucursal_principal=#{sucursal_principal} where ID_CLIENTE=#{idCliente}")
+            "puerta=#{puerta}, cod_postal=#{cod_postal}, municipio=#{municipio}, sucursal_principal=#{sucursal_principal} FROM BANCO.CLIENTE where ID_CLIENTE=#{idCliente}")
     @Options(useGeneratedKeys = true,keyProperty = "idCliente", keyColumn = "ID_CLIENTE")
     void actualizar(Cliente cliente);
 
-    //TODO Arreglar actualizar, salta error METHOD NOT ALLOWED al intentar actualizar un cliente
+
 }
