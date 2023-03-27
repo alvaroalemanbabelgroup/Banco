@@ -38,6 +38,6 @@ public class SucursalController {
     @DeleteMapping("")
     ResponseEntity<String> borrar(@RequestBody Sucursal sucursal){
         this.sucursalesService.borrar(sucursal);
-        return ResponseEntity.ok("Borrado id:"+sucursal.getId());
+        return ResponseEntity.ok("Borrado id:"+sucursal.getIdSucursal());
     }
 }

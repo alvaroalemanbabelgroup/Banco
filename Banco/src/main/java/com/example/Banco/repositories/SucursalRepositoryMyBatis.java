@@ -9,18 +9,20 @@ import java.util.List;
 public interface SucursalRepositoryMyBatis {
 
     //TODO: Implementar sentencia SQL con los nombres cuando los tengamos
-    @Insert("INSERT INTO SUCURSAL(ID, NOMBRE, DIRECCION, NUM, PISO, PUERTA, COD_POSTAL, MUNICIPIO, DIRECTOR) " +
-            "VALUES(#{id}, #{nombre}, #{direccion}, #{num}, #{piso}," +
+    @Insert("INSERT INTO SUCURSAL(NOMBRE, DIRECCION, NUM, PISO, PUERTA, COD_POSTAL, MUNICIPIO, DIRECTOR) " +
+            "VALUES(#{nombre}, #{direccion}, #{num}, #{piso}," +
             " #{puerta}, #{cod_postal}, #{municipio}, #{director})")
+    @Options(useGeneratedKeys = true, keyProperty = "idSucursal", keyColumn="ID_SUCURSAL")
+
 
     public void alta(Sucursal sucursal);
 
 
     //TODO: Implementar/corregir sentencia SQL con los nombres cuando los tengamos
-    @Select("SELECT ID,NOMBRE,DIRECCION, NUM, PISO, PUERTA, COD_POSTAL, MUNICIPIO, DIRECTOR FROM SUCURSAL")
+    @Select("SELECT ID_SUCURSAL,NOMBRE,DIRECCION, NUM, PISO, PUERTA, COD_POSTAL, MUNICIPIO, DIRECTOR FROM SUCURSAL")
     public List<Sucursal> listar();
 
-    @Delete("DELETE FROM sucursal WHERE id=#{id}")
+    @Delete("DELETE FROM sucursal WHERE ID_SUCURSAL=#{idSucursal}")
     public void borrar(Sucursal sucursal);
 
 

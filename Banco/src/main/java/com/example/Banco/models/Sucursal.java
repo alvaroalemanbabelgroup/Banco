@@ -1,7 +1,7 @@
 package com.example.Banco.models;
 
 public class Sucursal {
-    private int id;
+    private int idSucursal;
     private String nombre;
     private String direccion;
     private String num;
@@ -12,8 +12,8 @@ public class Sucursal {
     private String director;
 
 
-    public Sucursal(int id, String nombre, String direccion, String num, String piso, String puerta, String cod_postal, String municipio, String director) {
-        this.id = id;
+    public Sucursal(int idSucursal, String nombre, String direccion, String num, String piso, String puerta, String cod_postal, String municipio, String director) {
+        this.idSucursal = idSucursal;
         this.nombre = nombre;
         this.direccion = direccion;
         this.num = num;
@@ -24,12 +24,12 @@ public class Sucursal {
         this.director = director;
     }
 
-    public int getId() {
-        return id;
+    public int getIdSucursal() {
+        return idSucursal;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdSucursal(int idSucursal) {
+        this.idSucursal = idSucursal;
     }
 
     public String getNombre() {
