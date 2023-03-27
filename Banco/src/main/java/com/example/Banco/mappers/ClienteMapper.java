@@ -55,4 +55,6 @@ public interface ClienteMapper {
             "puerta=#{puerta}, cod_postal=#{cod_postal}, municipio=#{municipio}, sucursal_principal=#{sucursal_principal} where ID_CLIENTE=#{idCliente}")
     @Options(useGeneratedKeys = true,keyProperty = "idCliente", keyColumn = "ID_CLIENTE")
     void actualizar(Cliente cliente);
+
+    //TODO Arreglar actualizar, salta error METHOD NOT ALLOWED al intentar actualizar un cliente
 }
